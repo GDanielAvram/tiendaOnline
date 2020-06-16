@@ -1,0 +1,89 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${session.accountSession}" th:unless="${session ==null}">Profile</title>
+<!-- Bootstrap core CSS -->
+<link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+	<h1>Editar Datos</h1>
+	<p th:text="${session.accountSession}">Profile</p>
+	<form class="form-updatePerfilCliente" method="post"
+		th:action="@{/updatePerfilCliente}">
+		<div class="text-center mb-4">
+			<img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg"
+				alt="" width="72" height="72">
+			<h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
+			<p>
+				Build form controls with floating labels via the
+				<code>:placeholder-shown</code>
+				pseudo-element. <a
+					href="https://caniuse.com/#feat=css-placeholder-shown">Works in
+					latest Chrome, Safari, and Firefox.</a>
+			</p>
+		</div>
+
+		<div class="form-label-group">
+			<input type="text" id="inputText" name="nombre" class="form-control"
+				placeholder="Nombre">
+		</div>
+		<div class="form-label-group">
+			<input type="text" id="inputText" name="apellidos"
+				class="form-control" placeholder="Apellidos">
+		</div>
+		<div class="form-label-group">
+			<input type="email" id="email" name="email" class="form-control"
+				placeholder="Email">
+		</div>
+		<div class="form-label-group">
+			<input type="text" id="inputText" name="usuario" class="form-control"
+				placeholder="Usuario">
+		</div>
+		<div class="form-label-group">
+			<input type="password" id="password" name="password"
+				class="form-control" placeholder="Password">
+		</div>
+		<div class="form-label-group">
+			<input type="date" id="date" name="fechaNacimiento"
+				class="form-control" placeholder="Fecha de nacimiento">
+		</div>
+		<div class="form-label-group">
+			<input type="text" id="inputText" name="direccionEnvio"
+				class="form-control" placeholder="Direccion de envio">
+		</div>
+
+		<div class="form-label-group">
+			<input type="text" id="inputText" name="banco" class="form-control"
+				placeholder="Banco">
+		</div>
+		<div class="form-label-group">
+			<input type="number" id="number" name="numeroTarjeta"
+				class="form-control" placeholder="Numero de tarjeta">
+		</div>
+		<div class="form-label-group">
+			<input type="text" id="inputText" name="titular" class="form-control"
+				placeholder="Titular">
+		</div>
+		<div class="form-label-group">
+			<input type="number" id="number" name="codigoSeguridad"
+				class="form-control" placeholder="Codigo de seguridad">
+		</div>
+		<div class="form-label-group">
+			<input type="text" id="inputText" name="direccionFacturacion"
+				class="form-control" placeholder="Direccion de facturacion">
+		</div>
+
+
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button>
+		<p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${session.accountSession}" th:unless="${session ==null}">Profile</title>
+<!-- Bootstrap core CSS -->
+<link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+	<h1>Datos del cliente</h1>
+	<p th:text="${session.accountSession}">Profile</p>
+	<table class="table table-sm">
+		<thead>
+			<tr>
+				<th scope="col">Nombre</th>
+				<th scope="col">Apellidos</th>
+				<th scope="col">Email</th>
+				<th scope="col">Usuario</th>
+				<th scope="col">Password</th>
+				<th scope="col">Fecha de nacimiento</th>
+				<th scope="col">Direccion de envio</th>
+				<th scope="col">Banco</th>
+				<th scope="col">Numero de tarjeta</th>
+				<th scope="col">Titular</th>
+				<th scope="col">Codigo de seguridad</th>
+				<th scope="col">Direccion de facturacion</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${session.cliente.nombre}"></td>
+				<td th:text="${session.cliente.apellidos}"></td>
+				<td th:text="${session.cliente.email}"></td>
+				<td th:text="${session.cliente.nombreUsuario}"></td>
+				<td th:text="${session.cliente.password}"></td>
+				<td th:text="${session.cliente.fechaNacimiento}"></td>
+				<td th:text="${session.cliente.direccionEnvio}"></td>
+				<td th:text="${session.cliente.banco}"></td>
+				<td th:text="${session.cliente.numeroTarjeta}"></td>
+				<td th:text="${session.cliente.titular}"></td>
+				<td th:text="${session.cliente.codigoSeguridad}"></td>
+				<td th:text="${session.cliente.direccionFacturacion}"></td>
+
+
+			</tr>
+		</tbody>
+	</table>
+	<a th:href="@{/updatePerfilCliente}">Editar</a>
+	<a th:href="@{/producto/inicio}">Regresar</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+package com.tiendaOnline.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/cliente")
+public class ClienteController {
+   
+	@GetMapping("/perfilCliente")
+    public String perfilCliente() {
+        return "perfilCliente";
+    }
+    @GetMapping("/inicio")
+    public String inicio() {
+        return "inicio";
+    }
+
+}

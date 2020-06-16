@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>tiendaOnline</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container-fluid body">
+
+		<form class="form-horizontal col-md-offset-3" method="post"
+			th:action="@{/producto/crearProducto}">
+			<div class="form-group">
+				<label for="control-label col-sm-2">Nombre</label> <input
+					type="text" class="form-control" id="formGroupExampleInput"
+					placeholder="Nombre del producto" name="nombreProducto" required>
+			</div>
+			<div class="form-group">
+				<label for="control-label col-sm-2">Precio</label> <input
+					type="text" step="0.01" class="form-control"
+					id="formGroupExampleInput3" placeholder="Precio del producto"
+					name="Precio" required>
+			</div>
+			<div class="form-group">
+				<label for="control-label col-sm-2">Stock</label> <input type="text"
+					class="form-control" id="formGroupExampleInput4"
+					placeholder="Stock del producto" name="Stock" required>
+			</div>
+			<!-- 
+			<div class="form-group">
+				<label for="control-label col-sm-2">Categoria</label> <input type="text"
+					class="form-control" id="formGroupExampleInput5"
+					placeholder="Categoria del producto" name="nombreCategoria" required>
+			</div>
+			  -->
+
+			<button class="btn btn-primary" type="submit">Crear Producto</button>
+			<a class="btn btn-primary" th:href="@{/producto/inicio}">Volver</a>
+		</form>
+	</div>
+
+</body>
+</html>

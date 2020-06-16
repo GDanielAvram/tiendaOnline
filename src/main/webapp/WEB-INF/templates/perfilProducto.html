@@ -1,0 +1,49 @@
+<!DOCTYPEhtml>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${session.accountSession}" th:unless="${session ==null}">Profile</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<nav th:replace="fragments/header_loader"></nav>
+
+	<div class="container-fluid body" id="todo">
+		<div class="row content">
+			<div class="col-sm-12 text-left">
+				<h1>TiendaOnline</h1>
+				
+				<hr>
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th scope="col">Nombre del Producto</th>
+							<th scope="col">Precio</th>
+							<th scope="col">Stock</th>
+							<th scope="col">Editar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td th:text="${producto.nombreProducto}"></td>
+							<td th:text="${producto.precio}"></td>
+							<td th:text="${producto.stock}"></td>
+							
+						</tr>
+					</tbody>
+				</table>
+					
+			</div>
+		</div>
+	</div>
+	<a th:href="@{/producto/editarProducto/{idProducto}(idProducto = ${producto.idProducto})}">Editar</a>
+					<a th:href="@{/producto/inicio}">Regresar</a>
+</body>
+</html>

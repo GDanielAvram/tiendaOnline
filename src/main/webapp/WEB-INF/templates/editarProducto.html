@@ -1,0 +1,134 @@
+<!DOCTYPEhtml>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${session.accountSession}" th:unless="${session ==null}">Profile</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div class="container-fluid body" id="todo">
+		<div class="row content">
+			<div class="col-sm-12 text-left">
+				<h1>tiendaOnline</h1>
+
+				<hr>
+				<h4 class="d-flex justify-content-between align-items-center mb-3">
+
+					<span class="text-muted">Editar Producto</span> <span
+						class="badge badge-secondary badge-pill"
+						th:text="${producto.idProducto}"></span>
+				</h4>
+
+				<div class="col-sm-9">
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="#home">Datos
+								Producto</a></li>
+						<li><a data-toggle="tab" href="#editar">Editar</a></li>
+
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="home">
+							<hr>
+							<li class="col-xs-6 col-sm-6 col-md-4 col-lg-3"><img
+								src="https://source.unsplash.com/random/219x225/?fruit&sig=2"
+								alt="Producto">
+								<table class="table table-sm">
+									<thead>
+										<tr>
+											<th scope="col">Nombre del Producto</th>
+											<!-- 
+											<th scope="col">Categoria></th>  
+											-->
+											<th scope="col">Precio</th>
+											<th scope="col">Stock</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td th:text="${producto.nombreProducto}"></td>
+											<!-- 
+											<td th:text="${producto.categoria}"></td>  
+											-->
+											<td th:text="${producto.precio}"></td>
+											<td th:text="${producto.stock}"></td>
+										</tr>
+									</tbody>
+								</table>
+
+							<hr>
+
+						</div>
+						<!--/tab-pane-->
+						<div class="tab-pane" id="editar">
+
+							<hr>
+							<form
+								th:action="@{producto/editarProducto/{idProducto}(idProducto=${producto.idProducto})}"
+								method="post">
+								<div class="form-group">
+									<div class="col-xs-6">
+										<label for="nombreProducto"><h4>Nombre Producto</h4></label> <input
+											type="text" class="form-control" name="nombreProducto"
+											id="nombreProducto" placeholder="nombreProducto">
+										</textarea>
+									</div>
+
+									<div class="col-xs-6">
+										<label for="precio"><h4>Precio</h4></label> <input type="text"
+											class="form-control" name="precio" id="precio"
+											placeholder="precio">
+										</textarea>
+									</div>
+
+									<div class="col-xs-6">
+										<label for="stock"><h4>Stock</h4></label> <input type="text"
+											class="form-control" name="stock" id="stock"
+											placeholder="stock">
+										</textarea>
+									</div>
+
+									<!-- 
+									<div class="col-xs-6">
+										<label for="stock"><h4>Categoria</h4></label>
+										<input type="text" class="form-control" name="categoria"
+											id="categoria" placeholder="categoria"></textarea>
+									</div>
+									 -->
+
+
+								</div>
+								<hr>
+								<div class="form-group">
+									<div class="col-xs-12">
+										<br> <a th:href="@{/producto/editarProducto/{idProducto}(idProducto=${producto.idProducto})}">Guardar</a>
+										<br>
+										<a th:href="@{/producto/inicio}">Regresar</a>
+										<br>
+										<a th:href="@{/producto/borrarProducto/{idProducto}(idProducto=${producto.idProducto})}">Borrar</a>											
+
+									</div>
+								</div>
+							</form>
+
+						</div>
+
+					</div>
+					<!--/tab-pane-->
+				</div>
+				<!--/tab-content-->
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
